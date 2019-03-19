@@ -20,7 +20,7 @@ requirements:
     - {{ compiler('c') }}
   host:
     - libblas
-    - libcblas
+    - liblapack
     - python
     - setuptools
     - pip
