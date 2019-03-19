@@ -10,7 +10,7 @@ source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
   sha256: {{ sha256 }}
   patches:
-    - no-scipy-setup.patch  # doesn't seem to be any reason for this
+    - no-scipy-setup.patch  # doesn't seem to be any need for scipy at build
 
 build:
   number: 0
@@ -21,15 +21,15 @@ requirements:
   build:
     - {{ compiler('c') }}
   host:
+    - libblas
+    - liblapack
     - python
     - setuptools
     - pip
     - numpy
-    - openblas  # links to the blas picked up from numpy version
   run:
     - python
     - {{ pin_compatible('numpy') }}
-    - openblas
     - scipy >=0.13.2
 
 test:
