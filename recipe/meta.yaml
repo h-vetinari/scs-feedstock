@@ -47,7 +47,6 @@ about:
   license: MIT
   license_family: MIT
   license_file: LICENSE
-  # LICENSE is in recipe for now; https://github.com/bodono/scs-python/pull/4
   summary: 'Python interface for SCS, which solves convex cone problems'
   description: |
     Solves convex cone programs via operator splitting.
