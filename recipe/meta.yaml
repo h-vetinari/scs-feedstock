@@ -1,6 +1,6 @@
 {% set name = "scs" %}
-{% set version = "2.0.2" %}
-{% set sha256 = "c468a475c49327599d9e89fa1aff1ba6196cc967df5364d74db66de4fceab65a" %}
+{% set version = "2.1.0" %}
+{% set sha256 = "1d67a34b36ef31fc23eeb29c97d3b126d8c70f6420e4da600d674f478d1985d4" %}
 
 package:
   name: {{ name|lower }}
@@ -9,9 +9,11 @@ package:
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
   sha256: {{ sha256 }}
+  patches:
+    - no-scipy-setup.patch  # doesn't seem to be any need for scipy at build
 
 build:
-  number: 1001
+  number: 0
   script: python -m pip install --no-deps --ignore-installed --verbose .
   skip: true  # figure out Windows build later....  # [win]
 
@@ -47,7 +49,6 @@ about:
   license: MIT
   license_family: MIT
   license_file: LICENSE
-  # LICENSE is in recipe for now; https://github.com/bodono/scs-python/pull/4
   summary: 'Python interface for SCS, which solves convex cone problems'
   description: |
     Solves convex cone programs via operator splitting.
