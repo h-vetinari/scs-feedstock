@@ -1,20 +1,18 @@
 {% set name = "scs" %}
-{% set version = "2.1.0" %}
-{% set sha256 = "1d67a34b36ef31fc23eeb29c97d3b126d8c70f6420e4da600d674f478d1985d4" %}
+{% set version = "2.1.1-2" %}
+{% set sha256 = "f816cfe3d4b4cff3ac2b8b96588c5960ddd2a3dc946bda6b09db04e7bc6577f2" %}
 
 package:
   name: {{ name|lower }}
-  version: {{ version }}
+  version: "{{ version|replace('-', '.') }}"  # 2.1.1-2 => 2.1.1.2
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
   sha256: {{ sha256 }}
-  patches:
-    - no-scipy-setup.patch  # doesn't seem to be any need for scipy at build
 
 build:
   number: 0
-  script: python -m pip install --no-deps --ignore-installed --verbose .
+  script: "{{ PYTHON }} -m pip install . --no-deps -vv"
   skip: true  # figure out Windows build later....  # [win]
 
 requirements:
