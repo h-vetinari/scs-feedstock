@@ -183,4 +183,5 @@ Feedstock Maintainers
 =====================
 
 * [@dougalsutherland](https://github.com/dougalsutherland/)
+* [@mcg1969](https://github.com/mcg1969/)
 
