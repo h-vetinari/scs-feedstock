@@ -11,9 +11,9 @@ source:
   sha256: {{ sha256 }}
 
 build:
-  number: 0
+  number: 1
   script: "{{ PYTHON }} -m pip install . --no-deps -vv"
-  skip: true  # figure out Windows build later....  # [win]
+  skip: true  # [win and py==27]
 
 requirements:
   build:
