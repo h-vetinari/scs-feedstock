@@ -253,5 +253,6 @@ Feedstock Maintainers
 =====================
 
 * [@dougalsutherland](https://github.com/dougalsutherland/)
+* [@h-vetinari](https://github.com/h-vetinari/)
 * [@mcg1969](https://github.com/mcg1969/)
 
