@@ -1,18 +1,18 @@
 {% set name = "scs" %}
-{% set version = "2.1.1-2" %}
-{% set sha256 = "f816cfe3d4b4cff3ac2b8b96588c5960ddd2a3dc946bda6b09db04e7bc6577f2" %}
+{% set version = "2.1.2" %}
+{% set sha256 = "667ed6019bb4e2f925bd9291161d2c61cc0077443094437b703ea905333fd585" %}
 
 package:
   name: {{ name|lower }}
-  version: "{{ version|replace('-', '.') }}"  # 2.1.1-2 => 2.1.1.2
+  version: {{ version|replace('-', '.') }}    # 2.1.1-2 => 2.1.1.2
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
   sha256: {{ sha256 }}
 
 build:
-  number: 3
-  script: "{{ PYTHON }} -m pip install . -vv"
+  number: 0
+  script: {{ PYTHON }} -m pip install . -vv
   skip: true  # [py==27 and (win or (not x86_64))]
 
 requirements:
@@ -47,7 +47,7 @@ about:
   license: MIT
   license_family: MIT
   license_file: LICENSE
-  summary: 'Python interface for SCS, which solves convex cone problems'
+  summary: Python interface for SCS, which solves convex cone problems
   description: |
     Solves convex cone programs via operator splitting.
     Can solve: linear programs (LPs), second-order cone programs (SOCPs),
@@ -61,3 +61,4 @@ extra:
   recipe-maintainers:
     - dougalsutherland
     - mcg1969
+    - h-vetinari
