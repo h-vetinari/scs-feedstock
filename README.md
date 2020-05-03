@@ -31,7 +31,7 @@ Current build status
     <td>Drone</td>
     <td>
       <a href="https://cloud.drone.io/conda-forge/scs-feedstock">
-        <img alt="linux" src="https://img.shields.io/drone/build/conda-forge/master.svg?label=Linux">
+        <img alt="linux" src="https://img.shields.io/drone/build/conda-forge/scs-feedstock/master.svg?label=Linux">
       </a>
     </td>
   </tr>
@@ -280,7 +280,7 @@ In order to produce a uniquely identifiable distribution:
 Feedstock Maintainers
 =====================
 
-* [@dougalsutherland](https://github.com/dougalsutherland/)
+* [@djsutherland](https://github.com/djsutherland/)
 * [@h-vetinari](https://github.com/h-vetinari/)
 * [@mcg1969](https://github.com/mcg1969/)
 
