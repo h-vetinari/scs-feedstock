@@ -11,7 +11,7 @@ channel_targets:
 libblas:
 - 3.8 *netlib
 liblapack:
-- 3.8.0 *netlib
+- 3.8 *netlib
 macos_machine:
 - x86_64-apple-darwin13.4.0
 numpy:
@@ -25,5 +25,5 @@ python:
 target_platform:
 - osx-64
 zip_keys:
-- - numpy
-  - python
+- - python
+  - numpy
