@@ -12,7 +12,10 @@ source:
 
 build:
   number: 2
-  script: {{ PYTHON }} -m pip install . -vv
+  script:
+    - export BLAS_LAPACK_LIB_PATHS="$PREFIX/lib"    # [unix]
+    - export BLAS_LAPACK_LIBS="lapack:cblas:blas"   # [unix]
+    - {{ PYTHON }} -m pip install . -vv
   skip: true  # [py==27 and (win or (not x86_64))]
 
 requirements:
