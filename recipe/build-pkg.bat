@@ -1,5 +1,7 @@
-if not "%cuda_compiler_version%"=="None" (
-   set "GPU_OPT=--install-option=--gpu"
+if "%cuda_compiler_version%"=="None" (
+    python -m pip install . -vv
+    if %ERRORLEVEL% neq 0 exit 1
+) else (
+    python setup.py install --scs --gpu --extraverbose
+    if %ERRORLEVEL% neq 0 exit 1
 )
-python -m pip install %GPU_OPT% . -vv
-if %ERRORLEVEL% neq 0 exit 1
