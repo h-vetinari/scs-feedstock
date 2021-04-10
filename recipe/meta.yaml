@@ -46,6 +46,7 @@ outputs:
         - setuptools
         - pip
         - numpy
+        - scipy
         - libblas
         - liblapack
       run:
