@@ -1,5 +1,4 @@
 {% set version = "2.1.4" %}
-{% set number = 0 %}
 # see github.com/conda-forge/conda-forge.github.io/issues/1059 for naming discussion
 {% set scs_proc_type = "cuda" if cuda_compiler_version != "None" else "cpu" %}
 
@@ -12,7 +11,7 @@ source:
   sha256: ddd6614db7f0e63b69672cfd02ba2c8423dade33a58b0a341a5119091c501739
 
 build:
-  number: {{ number }}
+  number: 0
 
 requirements:
   build:
@@ -32,8 +31,8 @@ outputs:
     script: build-pkg.sh   # [not win]
     script: build-pkg.bat  # [win]
     build:
-      string: "py{{ CONDA_PY }}h{{ PKG_HASH }}_{{ number }}_{{ scs_proc_type }}"                                                  # [cuda_compiler_version == "None"]
-      string: "py{{ CONDA_PY }}cuda{{ cuda_compiler_version|replace(".", "") }}h{{ PKG_HASH }}_{{ number }}_{{ scs_proc_type }}"  # [cuda_compiler_version != "None"]
+      string: "py{{ CONDA_PY }}h{{ PKG_HASH }}_{{ PKG_BUILDNUM }}_{{ scs_proc_type }}"                                                  # [cuda_compiler_version == "None"]
+      string: "py{{ CONDA_PY }}cuda{{ cuda_compiler_version|replace(".", "") }}h{{ PKG_HASH }}_{{ PKG_BUILDNUM }}_{{ scs_proc_type }}"  # [cuda_compiler_version != "None"]
     requirements:
       build:
         - python                                 # [build_platform != target_platform]
