@@ -1,13 +1,15 @@
 c_compiler:
 - gcc
 c_compiler_version:
-- '9'
+- '8'
 cdt_name:
 - cos7
 channel_sources:
 - conda-forge,defaults
 channel_targets:
 - conda-forge main
+cuda_compiler_version:
+- None
 docker_image:
 - quay.io/condaforge/linux-anvil-ppc64le
 libblas:
