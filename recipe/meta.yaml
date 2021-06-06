@@ -10,8 +10,8 @@ source:
   url: https://pypi.io/packages/source/s/scs/scs-{{ version }}.tar.gz
   sha256: ddd6614db7f0e63b69672cfd02ba2c8423dade33a58b0a341a5119091c501739
   patches:
-    # adapt python build-requirement for osx-arm
-    - patches/0001-adapt-python-requirement-for-py38-on-OSX-ARM.patch  # [py38 and build_platform != target_platform]
+    # to unblock osx-arm build, which spuriously tries to install stuff
+    - patches/0001-remove-pyproject.toml.patch  # [build_platform != target_platform]
 
 build:
   number: 0

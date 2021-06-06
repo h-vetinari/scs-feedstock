@@ -1,0 +1,29 @@
+From 31132372a2f45580a153cdadb2ace8012e39c23a Mon Sep 17 00:00:00 2001
+From: "H. Vetinari" <h.vetinari@gmx.com>
+Date: Sun, 6 Jun 2021 21:09:57 +0200
+Subject: [PATCH] remove pyproject.toml
+
+---
+ pyproject.toml | 10 ----------
+ 1 file changed, 10 deletions(-)
+ delete mode 100644 pyproject.toml
+
+diff --git a/pyproject.toml b/pyproject.toml
+deleted file mode 100644
+index fd16e7b..0000000
+--- a/pyproject.toml
++++ /dev/null
+@@ -1,10 +0,0 @@
+-[build-system]
+-requires = [
+-    "numpy>=1.17,<1.18; python_version=='3.5'",
+-    "numpy>=1.17,<1.18; python_version=='3.6'",
+-    "numpy>=1.17,<1.18; python_version=='3.7'",
+-    "numpy>=1.17,<1.18; python_version=='3.8'",
+-    "numpy>=1.19,<1.20; python_version=='3.9'",
+-    "setuptools",
+-    "wheel",
+-]
+-- 
+2.31.1.windows.1
+
