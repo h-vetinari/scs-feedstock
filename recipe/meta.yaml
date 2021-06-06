@@ -12,6 +12,10 @@ source:
   patches:
     # to unblock osx-arm build, which spuriously tries to install stuff
     - patches/0001-remove-pyproject.toml.patch  # [build_platform != target_platform]
+    # disable GPU tests in CI (library can be compiled for GPU,
+    # but cannot be run without hardware; GPU runtime detection
+    # in the library is not smart enough yet to tell)
+    - patches/0002-disable-GPU-tests-in-CI.patch
 
 build:
   number: 0

@@ -1,0 +1,29 @@
+From a0d8d013bd69ab18b3c614ee6afb5e573bfc1ece Mon Sep 17 00:00:00 2001
+From: "H. Vetinari" <h.vetinari@gmx.com>
+Date: Sun, 6 Jun 2021 20:13:35 +0200
+Subject: [PATCH 2/2] disable GPU tests in CI
+
+---
+ test/test_solve_random_cone_prob.py | 6 ++++--
+ 1 file changed, 4 insertions(+), 2 deletions(-)
+
+diff --git a/test/test_solve_random_cone_prob.py b/test/test_solve_random_cone_prob.py
+index abfff3d..c7feaa5 100644
+--- a/test/test_solve_random_cone_prob.py
++++ b/test/test_solve_random_cone_prob.py
+@@ -23,8 +23,10 @@ except ImportError:
+ 
+ flags = [(False, False), (True, False)]
+ try:
+-  import _scs_gpu
+-  flags += [(True, True)]
++  import os
++  if not (os.environ.get("CI", None) or os.environ.get("AGENT_NAME", None)):
++    import _scs_gpu
++    flags += [(True, True)]
+ except ImportError:
+   pass
+ 
+-- 
+2.31.1.windows.1
+
