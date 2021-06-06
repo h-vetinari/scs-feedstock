@@ -39,11 +39,11 @@ test:
     - _scs_direct
     - _scs_indirect
   requires:
-    - nose
+    - pytest
   source_files:
     - test/
   commands:
-    - nosetests test
+    - pytest test/ -v
 
 about:
   home: https://github.com/bodono/scs-python
