@@ -1,14 +1,12 @@
-{% set name = "scs" %}
 {% set version = "2.1.4" %}
-{% set sha256 = "ddd6614db7f0e63b69672cfd02ba2c8423dade33a58b0a341a5119091c501739" %}
 
 package:
-  name: {{ name|lower }}
+  name: scs
   version: {{ version|replace('-', '.') }}    # 2.1.1-2 => 2.1.1.2
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: {{ sha256 }}
+  url: https://pypi.io/packages/source/s/scs/scs-{{ version }}.tar.gz
+  sha256: ddd6614db7f0e63b69672cfd02ba2c8423dade33a58b0a341a5119091c501739
 
 build:
   number: 0
@@ -16,7 +14,6 @@ build:
     - export BLAS_LAPACK_LIB_PATHS="$PREFIX/lib"    # [unix]
     - export BLAS_LAPACK_LIBS="lapack:cblas:blas"   # [unix]
     - {{ PYTHON }} -m pip install . -vv
-  skip: true  # [py==27 and (win or (not x86_64))]
 
 requirements:
   build:
@@ -60,7 +57,6 @@ about:
     semidefinite programs (SDPs), exponential cone programs (ECPs),
     and power cone programs (PCPs), or problems with any combination of
     those cones.
-  doc_url: https://github.com/bodono/scs-python
   dev_url: https://github.com/bodono/scs-python
 
 extra:
